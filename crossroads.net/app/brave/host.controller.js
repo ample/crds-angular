@@ -7,23 +7,25 @@
 
   function HostCtrl($scope, $log, $http, $cookies, $stateParams, questions, ResponseService) {
 
+    var vm = this;
+
     // Properties
-    $scope.questions = questions;
-    $scope.total_questions = _.size(questions);
-    $scope.currentQuestion = parseInt($stateParams.step) || 1;
-    $scope.responses = ResponseService.data;
+    vm.questions = questions;
+    vm.total_questions = _.size(questions);
+    vm.currentQuestion = parseInt($stateParams.step) || 1;
+    vm.responses = ResponseService.data;
 
     // Methods
-    $scope.previous = function(){
-      $scope.currentQuestion--;
+    vm.previous = function(){
+      vm.currentQuestion--;
     };
 
-    $scope.next = function(){
-      $scope.currentQuestion++;
+    vm.next = function(){
+      vm.currentQuestion++;
     };
 
-    $scope.start_over = function(){
-      $scope.currentQuestion = 1;
+    vm.start_over = function(){
+      vm.currentQuestion = 1;
     };
 
   }

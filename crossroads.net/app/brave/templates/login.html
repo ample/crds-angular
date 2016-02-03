@@ -8,11 +8,11 @@
   <label for="register-password">Password</label>
   <input class="form-control" type="password" name="password" id="register-password">
   <br />
-  <div ng-show="authState == 'sign-in'">
+  <div ng-show="login.authState == 'sign-in'">
     <button class="btn btn-primary" ng-click="login.authenticate()">Sign In</button>
     <a class="btn btn-link" ng-click="authState='register'">...or click here to register</a>
   </div>
-  <div ng-show="authState == 'register'">
+  <div ng-show="login.authState == 'register'">
     <button class="btn btn-primary" ng-click="login.authenticate()">Register</button>
     <a class="btn btn-link" ng-click="authState='sign-in'">...or click here to sign in</a>
   </div>

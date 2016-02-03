@@ -9,9 +9,11 @@
   function LoginCtrl($rootScope, $scope, $log, $location, $cookies) {
     $log.debug('login.controller.js');
 
-    $scope.authState = 'sign-in';
+    var vm = this;
 
-    this.authenticate = function(){
+    vm.authState = 'sign-in';
+
+    vm.authenticate = function(){
       $cookies.put('userAuthenticated', true);
       $location.path('/brave/welcome');
     };
