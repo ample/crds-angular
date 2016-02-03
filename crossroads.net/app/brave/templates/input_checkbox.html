@@ -1,0 +1,6 @@
+<h3>{{definition.question}}</h3>
+<div class="checkbox" ng-repeat="answer in definition.answers track by $index">
+  <label>
+    <input type="checkbox" value="{{$index}}" checklist-value="$index" ng-model="responses[key][$index]" /> {{answer}}
+  </label>
+</div>
