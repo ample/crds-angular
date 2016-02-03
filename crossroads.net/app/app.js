@@ -1,7 +1,9 @@
+require('./brave');
 require('./events');
 require('./childcare');
 require('./mp_tools');
 require('../lib/select.css');
+
 
 (function() {
   'use strict()';
@@ -19,7 +21,8 @@ require('../lib/select.css');
       constants.MODULES.SEARCH,
       constants.MODULES.TRIPS,
       constants.MODULES.SIGNUP,
-      constants.MODULES.CHILDCARE
+      constants.MODULES.CHILDCARE,
+      constants.MODULES.BRAVE
    ]);
 
   angular.module(constants.MODULES.CROSSROADS).config(require('./routes'));

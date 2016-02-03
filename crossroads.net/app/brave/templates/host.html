@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h2>Host a Group</h2>
+</div>
+
+<div class="question" ng-repeat="(key, obj) in questions track by $index" ng-show="(currentQuestion-1)==$index">
+  <question key="{{key}}" label="obj.question" answers="obj.answers" responses="responses"></question>
+
+  <a href="#" class="btn btn-link" ng-hide="$index==0" ng-click="previous()">Go Back</a>
+  <button type="submit" class="btn btn-primary" ui-sref="brave.host({ step: currentQuestion+1 })">Next</button>
+</div>
+
+<div class="review" ng-show="(currentQuestion-1)==total_questions">
+  <p>Are your answers all correct?</p>
+  <pre>{{responses}}</pre>
+  <div class="btns">
+    <a class="btn btn-primary" href="#" ui-sref="brave.dashboard">Yes, this is correct</a>
+    <a class="btn btn-warning" href="#" ng-click="start_over()">No, I need to make some changes</a>
+  </div>
+</div>
