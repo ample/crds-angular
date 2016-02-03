@@ -1,8 +1,13 @@
 {
   "group_name": {
     "question": "Please name your group",
-    "answers": ["test", "test 2"],
-    "input_type": "select"
+    "input_type": "text",
+    "required": true
+  },
+  "zip_code": {
+    "question": "Where will you host this group",
+    "input_type": "number",
+    "required": true,
   },
   "goals": {
     "question": "What do you hope to get out of this journey? It's cool not to know...",
@@ -15,11 +20,6 @@
       "I have no idea -- and that's cool."
     ],
     "input_type": "checkbox"
-  },
-  "zip_code": {
-    "question": "Where will you host this group",
-    "answers": ["test", "test 2"],
-    "input_type": "text"
   },
   "site": {
     "question": "Which Crossroads site do you attend?",

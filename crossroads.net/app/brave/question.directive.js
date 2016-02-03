@@ -5,6 +5,7 @@
 
   require('./templates/input_radio.html');
   require('./templates/input_text.html');
+  require('./templates/input_number.html');
   require('./templates/input_checkbox.html');
   require('./templates/input_select.html');
 
