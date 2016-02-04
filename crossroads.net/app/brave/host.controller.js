@@ -30,11 +30,11 @@
 
     vm.current_index = function() {
       return Object.keys(vm.questions)[vm.currentQuestion - 1]
-    }
+    };
 
     vm.current_question = function() {
       return vm.questions[vm.current_index()];
-    }
+    };
 
     vm.start_over = function(){
       vm.currentQuestion = 1;

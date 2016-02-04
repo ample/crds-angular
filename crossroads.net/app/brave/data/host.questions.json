@@ -7,7 +7,7 @@
   "zip_code": {
     "question": "Where will you host this group",
     "input_type": "number",
-    "required": true,
+    "required": true
   },
   "goals": {
     "question": "What do you hope to get out of this journey? It's cool not to know...",
