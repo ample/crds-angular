@@ -3,15 +3,15 @@
 
   module.exports = BraveCtrl;
 
-  BraveCtrl.$inject = ['$log', '$location', '$cookies', 'ResponseService'];
+  BraveCtrl.$inject = ['$log', '$location', '$cookies', 'Responses'];
 
-  function BraveCtrl($log, $location, $cookies, ResponseService) {
+  function BraveCtrl($log, $location, $cookies, Responses) {
 
     // TODO This needs to go away when we implement authentication.
     if(!$cookies.get('userAuthenticated')) {
       $location.path('/brave/login');
     } else {
-      ResponseService.clear();
+      Responses.clear();
       $location.path('/brave/welcome');
     }
   }

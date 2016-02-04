@@ -16,12 +16,16 @@
       restrict: 'AE',
       scope: {
         key: '@key',
+        model: '@model',
         definition: '=',
         responses: '=responses',
       },
       transclude: true,
       template: '<ng-include src="getTemplateUrl()" />',
       controller: ['$scope', function($scope){
+        $scope.model = function() {
+          return $scope.definition.model;
+        };
         $scope.getTemplateUrl = function () {
           return 'templates/input_'+ $scope.definition.input_type +'.html';
         };
