@@ -60,6 +60,19 @@
         }
       })
 
+      .state('brave.summary', {
+        controller: 'SummaryCtrl as summary',
+        url: '/summary',
+        templateUrl: 'templates/summary.html',
+        resolve: {},
+        data: {
+          meta: {
+            title: 'Brave',
+            description: ''
+          }
+        }
+      })
+
       .state('brave.dashboard', {
         controller: 'DashboardCtrl as dashboard',
         url: '/dashboard',
