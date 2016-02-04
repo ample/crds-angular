@@ -73,6 +73,19 @@
         }
       })
 
+      .state('brave.choice', {
+        controller: 'ChoiceCtrl as choice',
+        url: '/choice',
+        templateUrl: 'templates/choice.html',
+        resolve: {},
+        data: {
+          meta: {
+            title: 'Brave',
+            description: ''
+          }
+        }
+      })
+
       .state('brave.dashboard', {
         controller: 'DashboardCtrl as dashboard',
         url: '/dashboard',

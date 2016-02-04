@@ -22,7 +22,7 @@
                 }
             }
             if (vm.onLastSlide()) {
-                $state.go('brave.choice');
+                $state.go('brave.welcome');
             }
         };
 
