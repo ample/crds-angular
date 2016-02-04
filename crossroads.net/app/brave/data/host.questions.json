@@ -2,11 +2,13 @@
   "group_name": {
     "question": "Please name your group",
     "input_type": "text",
+    "model": "group",
     "required": true
   },
   "zip_code": {
     "question": "Where will you host this group",
-    "input_type": "number",
+    "input_type": "text",
+    "model": "group",
     "required": true
   },
   "goals": {
@@ -19,11 +21,13 @@
       "I want to find God",
       "I have no idea -- and that's cool."
     ],
+    "model": "user",
     "input_type": "checkbox"
   },
   "site": {
     "question": "Which Crossroads site do you attend?",
     "answers": ["Oakley", "Florence", "Mason"],
+    "model": "user",
     "input_type": "radio"
   },
   "past_experience": {
@@ -34,6 +38,7 @@
       "Once before",
       "Yes, multiple times."
     ],
+    "model": "user",
     "input_type": "radio"
   }
 }
