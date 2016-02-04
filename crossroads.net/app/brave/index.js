@@ -5,9 +5,7 @@
 
   require('./templates/layout.html');
   require('./templates/welcome.html');
-  require('./templates/login.html');
   require('./templates/join.html');
-  require('./templates/host.html');
   require('./templates/dashboard.html');
 
   angular.module('crossroads.brave', [MODULES.CORE, MODULES.COMMON])
@@ -20,7 +18,8 @@
     .controller('LoginCtrl', require('./login.controller'))
     .controller('JoinCtrl', require('./login.controller'))
     .controller('DashboardCtrl', require('./dashboard.controller'))
-    .controller('HostCtrl', require('./host.controller'))
     ;
 
+    require('./host');
+    require('./login');
 })();

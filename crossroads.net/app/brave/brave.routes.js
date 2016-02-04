@@ -24,7 +24,7 @@
       .state('brave.login', {
         controller: 'LoginCtrl as login',
         url: '/login',
-        templateUrl: 'templates/login.html',
+        templateUrl: 'login/login.html',
         resolve: {},
         data: {
           meta: {
@@ -76,7 +76,7 @@
       .state('brave.host', {
         controller: 'HostCtrl as host',
         url: '/host/:step',
-        templateUrl: 'templates/host.html',
+        templateUrl: 'host/host.html',
         resolve: {
           questions: function($http){
             return $http.get('/app/brave/data/host.questions.json')
