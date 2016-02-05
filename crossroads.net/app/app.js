@@ -1,4 +1,4 @@
-require('./brave');
+require('./group_finder');
 require('./events');
 require('./childcare');
 require('./mp_tools');
@@ -22,7 +22,7 @@ require('../lib/select.css');
       constants.MODULES.TRIPS,
       constants.MODULES.SIGNUP,
       constants.MODULES.CHILDCARE,
-      constants.MODULES.BRAVE
+      constants.MODULES.GROUP_FINDER
    ]);
 
   angular.module(constants.MODULES.CROSSROADS).config(require('./routes'));

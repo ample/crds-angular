@@ -1,0 +1,45 @@
+
+{
+  "group_name": {
+    "question": "Please name your group",
+    "input_type": "text",
+    "model": "group",
+    "required": true
+  },
+  "zip_code": {
+    "question": "Where will you host this group",
+    "input_type": "text",
+    "model": "group",
+    "required": true
+  },
+  "goals": {
+    "question": "What do you hope to get out of this journey? It's cool not to know...",
+    "answers": [
+      "I want to expand my relationship with God.",
+      "I want to know myself better.",
+      "I want to get to know others.",
+      "I'm looking for answers",
+      "I want to find God",
+      "I have no idea -- and that's cool."
+    ],
+    "model": "member",
+    "input_type": "checkbox"
+  },
+  "site": {
+    "question": "Which Crossroads site do you attend?",
+    "answers": ["Oakley", "Florence", "Mason"],
+    "model": "member",
+    "input_type": "radio"
+  },
+  "past_experience": {
+    "question": "Have you journeyed with us before?",
+    "answers": [
+      "No, and I'm nervous",
+      "Nope. First time and I'm excited!",
+      "Once before",
+      "Yes, multiple times."
+    ],
+    "model": "member",
+    "input_type": "radio"
+  }
+}

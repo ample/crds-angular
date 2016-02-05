@@ -1,0 +1,8 @@
+<label>{{definition.question}}</label>
+<div class="text">
+  <label>
+    <select ng-model="responses[model()][key]" class="form-control">
+      <option ng-repeat="answer in definition.answers">{{answer}}</option>
+    </select>
+  </label>
+</div>
