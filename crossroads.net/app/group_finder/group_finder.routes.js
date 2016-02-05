@@ -50,6 +50,19 @@
         }
       })
 
+      .state(seriesPermalink + '.summary', {
+        controller: 'SummaryCtrl as summary',
+        url: '/summary',
+        templateUrl: 'summary/summary.html',
+        resolve: {},
+        data: {
+          meta: {
+            title: seriesTitle,
+            description: ''
+          }
+        }
+      })
+
       .state(seriesPermalink + '.host', {
         controller: 'HostCtrl as host',
         url: '/host/:step',
