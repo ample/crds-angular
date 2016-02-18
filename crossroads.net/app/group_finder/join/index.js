@@ -7,7 +7,6 @@
   require('./join_review.html');
   require('./join_results.html');
   require('./join_questions.html');
-  require('./join_complete.html');
   require('./join_contact.html');
   require('./templates/upsell.html');
   require('./templates/results.html');
@@ -22,7 +21,6 @@
     .controller('JoinModalCtrl',    require('./join_modal.controller'))
     .controller('JoinReviewCtrl', require('./join_review.controller'))
     .controller('JoinResultsCtrl', require('./join_results.controller'))
-    .controller('JoinCompleteCtrl', require('./join_complete.controller'))
     .controller('JoinContactCtrl', require('./join_contact.controller'))
     ;
 
