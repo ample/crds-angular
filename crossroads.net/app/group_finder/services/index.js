@@ -4,6 +4,7 @@
   var constants = require('crds-constants');
 
   angular.module(constants.MODULES.GROUP_FINDER)
+    .factory('Group',               require('./group.service'))
     .factory('GroupInfo',           require('./group_info.service'))
     .factory('GroupInvitationService',   require('./group_invitation.service.js'))
     .factory('Results',             require('./results.service'))

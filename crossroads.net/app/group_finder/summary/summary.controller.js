@@ -3,9 +3,9 @@
 
   module.exports = SummaryCtrl;
 
-  SummaryCtrl.$inject = ['$scope', '$log', '$state'];
+  SummaryCtrl.$inject = ['$scope', '$log', '$state', 'GroupInfo'];
 
-  function SummaryCtrl ($scope, $log, $state) {
+  function SummaryCtrl ($scope, $log, $state, GroupInfo) {
 
     var vm = this;
 
@@ -14,7 +14,10 @@
     vm.nextButton = 'Next';
 
     // TODO implement check to determine if user is member/host of a group
-    vm.isHost = true;
+    vm.groups = {
+      hosting: GroupInfo.getHosting(),
+      participating: GroupInfo.getParticipating()
+    };
 
     vm.nextSlide = function() {
       if (vm.currentSlide < vm.totalSlides) {

@@ -12,7 +12,8 @@
       permalink: 'brave',
       title: 'Brave'
     },
-    GOOGLE_API_KEY: 'AIzaSyAlv_y_ltF9naBkMhQOpg_aFas6AD6Hpzg'
+    GOOGLE_API_KEY: 'AIzaSyAlv_y_ltF9naBkMhQOpg_aFas6AD6Hpzg',
+    GROUP_TYPE_ID: 19
   };
 
 })();
