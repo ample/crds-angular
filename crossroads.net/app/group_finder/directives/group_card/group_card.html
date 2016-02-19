@@ -1,15 +1,15 @@
 <div class="group-card">
   <div class="group-images" ng-if="display==='host'">
-    <img ng-src="{{getMemberImage(member)}}" err-src="{{defaultImage}}" alt="" ng-repeat="member in group.members" ng-if="member.groupRoleId == 22">
+    <img ng-src="{{getUserImage(group.contactId)}}" err-src="{{defaultImage}}" alt="" ng-if="group.isHost === false">
   </div>
   <div class="group-images" ng-if="display==='members' || !display">
     <img ng-src="{{getMemberImage(member)}}" err-src="{{defaultImage}}" alt="" ng-repeat="member in group.members" ng-if="member.groupRoleId == 15">
   </div>
   <div class="group-description">
-    <p>{{groupDescription()}}. This group meets at <a href="#">{{group.addressLine1}}, {{group.postalCode}}</a></p>
+    <p>{{groupDescription()}}. This group meets at <a target="_blank" href="{{mapAddress()}}">{{group.address.addressLine1}}, {{group.address.zip}}</a></p>
   </div>
   <div class="footer">
-    <a class="select btn btn-primary" ng-if="group.isHost === true" ui-sref="group_finder.dashboard.group({groupId: group.id})">Select</a>
+    <a class="select btn btn-primary" ng-if="group.isHost === true" ui-sref="group_finder.dashboard.group({groupId: group.groupId})">Select</a>
     <a class="select btn btn-primary" href="mailto:{{group.host.email}}" ng-if="group.isHost === false">Email Host</a>
   </div>
 </div>

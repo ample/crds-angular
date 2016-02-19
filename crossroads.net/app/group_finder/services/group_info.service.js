@@ -17,9 +17,12 @@
       var cid = $cookies.get('userId');
       if (cid) {
         _.each(data, function(group) {
+
           if (group.contactId === parseInt(cid)) {
+            group.isHost = true;
             groups.hosting.push(group);
           } else {
+            group.isHost = false;
             groups.participating.push(group);
           }
         });

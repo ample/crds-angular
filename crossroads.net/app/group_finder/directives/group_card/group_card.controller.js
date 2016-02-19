@@ -26,11 +26,22 @@
     };
 
     $scope.groupDescription = function() {
-      return 'A ' + $scope.getGroupType() + ' group meeting on ' + $scope.group.time;
+      return 'A ' + $scope.getGroupType() + ' group meeting on ' + $scope.groupTime();
     };
 
     $scope.getTemplateUrl = function() {
       return 'group_card/group_' + $scope.template + '.html';
+    };
+
+    $scope.mapAddress = function() {
+      var address = $scope.group.address;
+      var searchAddress = address.addressLine1 + ', ' + address.city + ', ' + address.state + ', ' + address.zip;
+      return 'https://maps.google.com/?q=' + searchAddress.replace(/\s/g, '+');
+    };
+
+    $scope.groupTime = function() {
+      var meetingTime = moment().format('YYYY-MM-DD') + ' ' + $scope.group.meetingTime;
+      return moment().isoWeekday($scope.group.meetingDayId).format('dddd') + ', ' + moment(meetingTime).format('h a');
     };
 
   }
