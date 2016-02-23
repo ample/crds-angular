@@ -1,12 +1,20 @@
-<div ng-include="'templates/empty_results.html'" ng-if="result.results.length <= 0"></div>
+<div ng-if="result.results.length <= 0">
+  <div dynamic-content="$root.MESSAGES.groupFinderParticipantNoResults.content | html"></div>
+  <p class="btns text-center">
+    <a class="btn btn-next-question btn-block-mobile" href="#" ui-sref="group_finder.join.questions">Start Over</a>
+  </p>
+</div>
+
 <div class="results" ng-if="result.results.length > 0">
+  <div class="text-center" ng-show="result.currentPage == 1" dynamic-content="$root.MESSAGES.groupFinderParticipantResultsHeader.content | html"></div>
+
   <group-profile group="group" ng-repeat="group in result.filteredResults"></group-profile>
-  <pager
-  ng-model="result.currentPage"
-  total-items="result.results.length"
-  items-per-page="6"
-  next-text="More Results"
-  template-url="templates/pager.html"
-  >
-</pager>
+  <pager ng-model="result.currentPage"
+         total-items="result.results.length"
+         items-per-page="6"
+         previous-text="Back"
+         next-text="Next"
+         template-url="templates/pager.html"></pager>
+
+  <div class="text-center" dynamic-content="$root.MESSAGES.groupFinderContactCRDS.content | html"></div>
 </div>

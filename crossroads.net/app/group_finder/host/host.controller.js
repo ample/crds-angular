@@ -3,11 +3,11 @@
 
   module.exports = HostCtrl;
 
-  HostCtrl.$inject = ['$scope', '$state', 'Person'];
+  HostCtrl.$inject = ['$timeout', '$scope', '$state', 'AuthenticatedPerson'];
 
-  function HostCtrl ($scope, $state, Person) {
+  function HostCtrl ($timeout, $scope, $state, AuthenticatedPerson) {
     $scope.currentStep = 1;
-    $scope.person = Person;
+    $scope.person = AuthenticatedPerson;
   }
 
 })();

@@ -3,10 +3,9 @@
 
   module.exports = ResponseService;
 
-  ResponseService.$inject = ['$log'];
+  ResponseService.$inject = [];
 
-  function ResponseService($log) {
-
+  function ResponseService() {
     this.data = {};
 
     this.clear = function(){

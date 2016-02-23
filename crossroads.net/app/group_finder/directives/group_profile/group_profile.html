@@ -5,9 +5,9 @@
         <img class="media-object img-circle" ng-src="{{getProfileImage()}}" alt="Profile Photo" err-src="{{getDefaultImage()}}"/>
       </div>
       <div class="media-body">
+        <p class="group-type text-uppercase"><strong>{{getGroupType()}}</strong></p>
         <h4 class="media-heading">{{group.groupTitle}}</h4>
         <ul class="list-unstyled">
-          <li>{{getGroupType()}}</li>
           <li>{{group.time}}</li>
           <li>{{getGroupDistance() || group.distance}}</li>
         </ul>

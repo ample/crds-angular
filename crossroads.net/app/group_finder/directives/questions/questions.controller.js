@@ -158,11 +158,11 @@
       },100);
     };
 
-
     // ----------------------------------- //
 
     $scope.$watch('step', function(step) {
       $location.hash(step);
+      $scope.$broadcast('stepChange', step);
     });
 
     $window.onhashchange = function(e) {

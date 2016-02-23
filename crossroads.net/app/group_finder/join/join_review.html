@@ -1,3 +1,2 @@
-<div class="contact" ng-include="'templates/contact.html'" ng-if="join.contactCrds"></div>
+<div class="contact" dynamic-content="$root.MESSAGES.groupFinderParticipantAnywhereConfirmation.content | html" ng-if="join.contactCrds"></div>
 <div class="upsell" ng-include="'templates/upsell.html'" ng-if="join.showUpsell"></div>
-<div class="results" ng-include="'templates/results.html'" ng-if="join.showResults"></div>

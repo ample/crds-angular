@@ -3,15 +3,16 @@
 
   module.exports = JoinReviewCtrl;
 
-  JoinReviewCtrl.$inject = ['$scope', '$state', 'Responses', '$log', 'ZipcodeService'];
+  JoinReviewCtrl.$inject = ['$scope', '$state', 'Responses', 'ZipcodeService'];
 
-  function JoinReviewCtrl($scope, $state, Responses, $log, ZipcodeService) {
+  function JoinReviewCtrl($scope, $state, Responses, ZipcodeService) {
     var vm = this;
 
     vm.responses = Responses;
     vm.showUpsell = parseInt(vm.responses.data.prior_participation) > 2;
     vm.showResults = vm.showUpsell === false;
     vm.contactCrds = false;
+    Responses.data.completedQa = true;
 
     if (vm.responses.data.location && vm.responses.data.location.zip) {
       vm.zipcode = parseInt(vm.responses.data.location.zip);
@@ -27,7 +28,6 @@
     }
 
     if (parseInt(vm.responses.data.relationship_status) === 2) {
-      $log.debug('married');
       $scope.showInvite = true;
     }
 

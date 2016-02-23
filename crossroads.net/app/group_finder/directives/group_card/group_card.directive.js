@@ -5,9 +5,9 @@
 
   require('./group_card.html');
 
-  GroupCardDirective.$inject = ['$log'];
+  GroupCardDirective.$inject = [];
 
-  function GroupCardDirective($log) {
+  function GroupCardDirective() {
     return {
       restrict: 'AE',
       scope: {

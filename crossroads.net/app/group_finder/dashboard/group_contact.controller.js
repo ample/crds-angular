@@ -60,7 +60,6 @@
       }
 
       if (vm.errors.message === false && vm.errors.subject === false) {
-        $log.debug('Sending Message', toSend);
         Email.GroupMail.save(toSend, function() {
           $log.debug('GroupContactCtrl - message sent successfully');
           $modalInstance.close($scope.sent = true);

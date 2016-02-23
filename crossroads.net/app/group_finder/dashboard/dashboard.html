@@ -3,25 +3,25 @@
 <div ui-view class="dashboard">
   <div class="container">
 
-      <div class="groups hosting" ng-if="dashboard.groups.hosting.length > 0">
-        <div class="page-header">
-          <h3>Groups you're hosting</h3>
-        </div>
-        <div class="group-cards">
-          <group-card group="group" ng-repeat="group in dashboard.groups.hosting"></group-card>
-        </div>
-        <p><a class="btn btn-standard-dark btn-block" ui-sref="group_finder.host({ step: 1 })">Host Another Group</a></p>
+    <div class="groups hosting" ng-if="dashboard.groups.hosting.length > 0">
+      <div class="page-header">
+        <h3>Groups you're hosting</h3>
       </div>
+      <div class="group-cards">
+        <group-card group="group" ng-repeat="group in dashboard.groups.hosting"></group-card>
+      </div>
+      <p><a class="btn btn-standard-dark btn-block" ui-sref="group_finder.host({ step: 1 })">Host Another Group</a></p>
+    </div>
 
-      <div class="groups participating" ng-if="dashboard.groups.participating.length > 0">
-        <div class="page-header">
-          <h3>Groups you've joined</h3>
-        </div>
-        <div class="group-cards">
-          <group-card display="host" group="group" ng-repeat="group in dashboard.groups.participating"></group-card>
-        </div>
-        <p><a class="btn btn-standard-dark btn-block" ui-sref="group_finder.join">Join Another Group</a></p>
+    <div class="groups participating" ng-if="dashboard.groups.participating.length > 0">
+      <div class="page-header">
+        <h3>Groups you've joined</h3>
       </div>
+      <div class="group-cards">
+        <group-card display="host" group="group" ng-repeat="group in dashboard.groups.participating"></group-card>
+      </div>
+      <p><a class="btn btn-standard-dark btn-block" ui-sref="group_finder.join">Join Another Group</a></p>
+    </div>
 
   </div>
 </div>

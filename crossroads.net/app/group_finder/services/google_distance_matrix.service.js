@@ -1,5 +1,6 @@
+/* globals google */
 (function () {
-  'use strict()';
+  'use strict';
 
   /*
     API Reference:  https://developers.google.com/maps/documentation/javascript/3.exp/reference#DistanceMatrixService
@@ -103,7 +104,6 @@
         return;
       }
 
-      $log.debug('Loading Google Maps API');
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.async = true;
@@ -115,7 +115,6 @@
 
     function handleResponse(response, status, deferred) {
       var err;
-      $log.debug('Goole Distance Matrix response with status:', status);
 
       if (status !== google.maps.DistanceMatrixStatus.OK) {
         err = 'Google maps could not process the request and resulted in status:' + status;

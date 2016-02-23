@@ -1,21 +1,24 @@
-<div class="group-invitation">
+<div class="container group-invitation">
   <div class="error" ng-if="invitation.error">An unknown error has occurred, please contact support</div>
   <div ng-if="invitation.requestPending">
-    Your request is being processed
+    <h3>Please wait...</h3>
+    <p class="lead">Your request is being processed.</p>
   </div>
   <div ng-if="!invitation.requestPending">
-    <div ng-if="invitation.group">
-      <div ng-if="invitation.accepted">
-        <p>Your request has been accepted</p>
-        <group-invitation group="detail.group" header="Invite your Spouses:" ng-if="invitation.showInvite"></group-invitation>
-        <p><a class="btn btn-standard-dark btn-block" ui-sref="group_finder.dashboard">Go to Dashboard</a></p>
+
+    <div ng-if="invitation.accepted">
+      <div dynamic-content="$root.MESSAGES.groupFinderParticipantConfirmation.content | html"></div>
+      <div ng-if="invitation.showInvite">
+        <div dynamic-content="$root.MESSAGES.groupFinderParticipantInviteSpouse.content | html"></div>
+        <group-invitation group="detail.group"></group-invitation>
       </div>
-      <div ng-if="invitation.rejected">
-        <p>Your request could not be completed at this time</p>
-      </div>
+      <p class="btns text-center">
+        <a class="btn btn-next-question" ui-sref="group_finder.dashboard">Go to Your Dashboard</a>
+      </p>
     </div>
-    <div ng-if="!invitation.group">
-      <p>The group could not be found</p>
+
+    <div ng-if="invitation.rejected">
+      <p>Your request could not be completed at this time</p>
     </div>
   </div>
 </div>

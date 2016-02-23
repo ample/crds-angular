@@ -2,7 +2,7 @@
   <header ng-include="'common/header.html'"></header>
   <ui-view>
 
-    <div class="welcome">
+    <div class="welcome container">
       <div class="page-header">
         <h1>
           <small>the</small>
@@ -17,8 +17,9 @@
       </div>
       <hr />
       <div dynamic-content="$root.MESSAGES.groupFinderWelcome.content | html"></div>
-      <br />
-      <p><a class="btn btn-next-question" ui-sref="group_finder.summary">Let's Get Started</a></p>
+      <p class="btns">
+        <a class="btn btn-next-question btn-block-mobile" ui-sref="group_finder.summary">Let's Get Started</a>
+      </p>
     </div>
 
   </ui-view>

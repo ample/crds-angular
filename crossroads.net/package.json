@@ -82,6 +82,7 @@
     "angular-ui-event": "^1.0.0",
     "angular-ui-mask": "^1.4.1",
     "angular-ui-router": "^0.2.15",
+    "angularjs-slider": "^2.9.0",
     "angulartics": "^0.20.1",
     "blueimp-load-image": "^1.14.0",
     "crds-core": "*",

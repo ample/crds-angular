@@ -13,7 +13,9 @@
         url: '/host',
         templateUrl: 'host/host.html',
         resolve: {
-          GroupQuestionService: 'GroupQuestionService',
+          AuthenticatedPerson: ['Person', function(Person) {
+            return Person.getProfile();
+          }],
           QuestionDefinitions: function(GroupQuestionService) {
             return GroupQuestionService.get().$promise;
           }

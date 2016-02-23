@@ -3,38 +3,46 @@
 
   module.exports = GroupInvitationCtrl;
 
-  GroupInvitationCtrl.$inject = ['$cookies', '$stateParams', 'GroupInfo', 'GroupInvitationService', '$log', 'Responses'];
+  GroupInvitationCtrl.$inject = [
+    '$stateParams',
+    'GroupInvitationService',
+    'Responses',
+    'GROUP_ROLE_ID_PARTICIPANT'
+  ];
 
-  function GroupInvitationCtrl ($cookies, $stateParams, GroupInfo, GroupInvitationService, $log, Responses) {
-    $log.debug('GroupInvitationCtrl');
+  function GroupInvitationCtrl ($stateParams,
+                                GroupInvitationService,
+                                Responses,
+                                GROUP_ROLE_ID_PARTICIPANT) {
 
     var vm = this;
 
     vm.requestPending = true;
-    vm.contactId = $cookies.get('userId');
-    vm.group = null;
-    vm.showInvite = Responses.data.relationship_status = 2;
-    //vm.showInvite = true;
+    vm.showInvite = false;
+    vm.capacity = 0;
 
-    GroupInfo.findGroupById($stateParams.groupId)
-      .then(function(group) {
-        vm.group = group;
-        if (group) {
-          // TODO - Do we need to validate the this particular user was invited to the group?
-          var promise = GroupInvitationService.acceptInvitation($stateParams.groupId, vm.contactId);
-          promise.then(function() {
-            // Invitation acceptance was successful
-            vm.accepted = true;
-          }, function(error) {
-            // An error happened accepting the invitation
-            vm.accepted = false;
-          }).finally(function() {
-            vm.requestPending = false;
-          });
-        }
-      }, function(error) {
-        vm.error = error;
-      });
+    // if there are responses, then the user came through QA flow
+    if (_.has(Responses.data , 'completedQa')) {
+      vm.capacity = 1;
 
+      // Set capacity to account for invited spouse
+      if (parseInt(Responses.data.relationship_status) === 2) {
+        vm.capacity = 2;
+        vm.showInvite = true;
+      }
+    }
+
+    var promise = GroupInvitationService.acceptInvitation($stateParams.groupId,
+                                                          {capacity: vm.capacity, groupRoleId: GROUP_ROLE_ID_PARTICIPANT}
+    );
+    promise.then(function() {
+      // Invitation acceptance was successful
+      vm.accepted = true;
+    }, function(error) {
+      // An error happened accepting the invitation
+      vm.rejected = true;
+    }).finally(function() {
+      vm.requestPending = false;
+    });
   }
 })();

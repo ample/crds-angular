@@ -2,13 +2,13 @@
   "questions": [
     {
       "key": "setup",
-      "header": "We're gonna ask you 10 questions",
-      "description": "Your answers will help us define your group's style and will — in the end — connect you with the perfect traveling companions. Aready have people mind? That's cool. You can invite 'em later."
+      "header": "Answer ten quick questions for us.",
+      "description": "Your answers will help us define your group’s style and will (in the end) connect you with the perfect BRAVE group. If you already have some friends who want to join your group, hang tight—you’ll have a chance to invite them later."
     },
     {
       "key": "total_capacity",
-      "header": "How many folks are you ready to lead?",
-      "description": "Think about your space. Perhaps you can base this on how many people fit comfortably in your living room, or the number of chairs that fit around your dining room table.",
+      "header": "How much room do you have?",
+      "description": "Think about your space. How many people fit comfortably in your living room? How many chairs fit around your dining room table.",
       "label": "I have room for:",
       "model": "group",
       "input_type": "number",
@@ -26,13 +26,13 @@
     },
     {
       "key": "goals",
-      "header": "What made you want to host a BRAVE group?",
-      "description": "Pick the one that most represents how you feel.",
+      "header": "Why do you want to host a BRAVE group?",
+      "description": "Pick one that most represents how you feel.",
       "answers": [
-        "I want to help others feel connected to the community",
-        "I want to learn & grow",
-        "I want to find people to disciple",
-        "I want to make some new friends"
+        "I want to help others connect with a community.",
+        "I want to make some new friends.",
+        "I want to learn and grow.",
+        "I want to mentor and build into others."
       ],
       "input_type": "radio",
       "model": "member",
@@ -40,10 +40,11 @@
     },
     {
       "key": "gender",
-      "header": "Are you a man or a woman?",
+      "header": "What’s your gender?",
+      "description": "Because it’s important for others joining your group to know.",
       "answers": [
-        "I'm a grown man",
-        "I'm a woman (roar)"
+        "I'm a man",
+        "I'm a woman"
       ],
       "input_type": "radio",
       "model": "member",
@@ -51,36 +52,36 @@
     },
     {
       "key": "marital_status",
-      "header": "Relationship status?",
-      "description": "This is so Facebook right? But it can mean a lot to your group status too. ",
+      "header": "What's your Relationship status?",
+      "description": "This helps us make sure to save room for your spouse or to join a couples group, if you want.",
       "model": "member",
       "answers": [
         "I'm not married.",
-        "I'm married but we are going through the journey seperately.",
-        "I'm married and I intend to journey with my spouse."
+        "I'm married but we're going through the journey seperately.",
+        "I’m married and I want to be in the same group with my spouse."
       ],
       "input_type": "radio",
       "required": true
     },
     {
       "key": "group_type",
-      "header": "What kind of group are you interested in hosting?",
-      "description": "We’re not trying to create a grade school lunchroom dynamic... but some groups choose to roll with just guys, others with strictly gals. ",
+      "header": "What kind of group would you like to host?",
+      "description": "Some groups like to roll with just guys or strictly married couples. We’re not trying to recreate a scene from your school lunchroom.",
       "model": "member",
       "label": "I will host a:",
       "answers": [
-        "Coed group",
-        "Men only group (Don't pick this if you're a woman please)",
-        "Women only group (Don't pick this if you're a man... that's creepy)",
-        "Married couples group"
+        "Men and women together (like God intended).",
+        "Men only (no girls allowed).",
+        "Women only (don’t be a creeper, dude).",
+        "Married couples only (because you put a ring on it)."
       ],
       "input_type": "radio",
       "required": true
     },
     {
       "key": "kids",
-      "header": "Are kids welcome or is this adults only? ",
-      "description": "Being kid friendly does not mean that you have to run a day care. Only that you are open to people bringing thier kids along with them. ",
+      "header": "Is your group kid-friendly?",
+      "description": "This doesn’t mean you have to run a daycare. Just that you’re open to people bringing their kids along with them. And kids won’t count in your overall group size.",
       "model": "member",
       "answers": [
         "Adults only",
@@ -91,8 +92,8 @@
     },
     {
       "key": "pets",
-      "header": "Got animals?",
-      "description": "Do you have cats, dogs, alpacas or any other type of animal to which someone may be allergic or terrified?",
+      "header": "Do you have pets?",
+      "description": "Do you have cats, dogs, alpacas or any other type of animal to which someone may be allergic and/or terrified?",
       "label": "Select all that apply:",
       "model": "member",
       "answers": [
@@ -100,7 +101,8 @@
         "I have a cat",
         "I have an alpaca",
         "I have rodents (by choice)",
-        "I have rodents (not by choice)"
+        "I have rodents (not by choice)",
+        "My home is pet free"
       ],
       "input_type": "checkbox",
       "required": false
@@ -108,61 +110,44 @@
     {
       "key": "date_and_time",
       "header": "When do you want to meet? ",
-      "description": "Remember that BRAVE groups meet once a week for 5 weeks. They begin the week of April 3rd and will end the week of May 1st. They usually take less than 90 minutes from start to finish.",
+      "description": "When do you want to meet?",
+      "description": "Remember, BRAVE groups meet once a week for five weeks (starting the week of April 3 and ending the week of May 1). Groups usually take less than 90 minutes from start to finish.",
       "model": "member",
       "input_type": "day_time",
       "required": true
     },
     {
       "key": "location",
-      "header": "So where you gonna meet? ",
-      "description": "We want to make sure people are choosing groups they can get to. This is the address we have on file. Please edit if we got it wrong.",
+      "header": "Where do you plan to meet?",
+      "description": "We want to make sure people choose groups they can get to. (A home address may have auto-filled below if you logged in to your Crossroads account. Please update it if we got it wrong.)",
       "model": "member",
       "input_type": "address",
       "required": true
     },
     {
-      "key": "previous_experience",
-      "header": "Have you led a journey with us before?",
-      "answers": [
-        "No. And I’m nervous.",
-        "Nope. First time and I am so excited!",
-        "Once before.",
-        "Yes, multiple times."
-      ],
-      "input_type": "radio",
-      "model": "member",
-      "required": true
-    },
-    {
       "key": "profile_setup1",
-      "header": "Great Job!",
-      "description": "You're almost done. Let's just add a little of your own personality. Some flavor if you will."
+      "header": "Way to go!",
+      "description": "You're almost finished. Now’s the time to add a little of your own personality."
     },
     {
       "key": "profile_setup2",
-      "header": "You'll end up with something like this...",
+      "header": "Your group profile will look something like this:",
       "include": "templates/example_group.html",
-      "help": "<strong>FYI:</strong> Don't worry about the profile pic. It'll be your Crossroads.net profile picture. So what ever you load there, will appear here. Yay technology!"
+      "help": "<strong>Don't worry about the profile pic.</strong>Whatever you’ve uploaded to your Crossroads account will appear here. Technology is cool."
     },
     {
       "key": "description",
-      "header": "So let's make your's personal",
-      "description": "Write a few highlights that tell people what you're all about.",
+      "header": "Make your group personal.",
+      "description": "Write a few, short sentences that tell people what you’re all about.",
       "label": "Your message",
-      "help": "<strong>Here's an example:</strong> Hi, I'm Kevin, a 30 something father, husband and Bengals apologist. This isn't my first rodeo, but it's my first time hosting a group. We’ll be meeting at my humble home in Hyde Park.",
+      "help": "<strong>Example:</strong> Example: Hi, I’m Kevin. I’m a 35-year-old dad, husband and Bengals appologist. This is my first time hosting a group and I’m pumped to meet some new people. We’ll meet in my home in Walnut Hills. ",
       "input_type": "textarea",
       "required": true
     },
     {
       "key": "review_setup1",
-      "header": "Now for the most important step!",
-      "description": "You are about to see your completed profile. And we need you to check and double check your info. Seriously. Once you give this thing the greenlight, there are no takebacks."
-    },
-    {
-      "key": "review_setup2",
-      "header": "Ready to review?",
-      "description": "No pressure, this is only going to be viewable to thousands of people.",
+      "header": "Now for the most important part.",
+      "description": "You're about to see your completed profile. Check and double check your info. Seriously — once you hit, \"publish,\" there are no takebacks. ",
       "next": "Let's Review"
     }
   ]

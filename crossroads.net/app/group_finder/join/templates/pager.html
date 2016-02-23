@@ -1,5 +1,7 @@
-<ul class="pager">
-  <li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}"><a href ng-click="selectPage(page - 1, $event)">{{::getText('previous')}}</a></li>
-  <li ng-hide="noNext()" ng-class="{disabled: noNext()||ngDisabled, next: align}"><a href ng-click="selectPage(page + 1, $event)">{{::getText('next')}}</a></li>
-  <li ng-show="noNext()"><a class="btn btn-primary" ui-sref="group_finder.join.contact">Contact Crossroads</a></li>
-</ul>
+<p class="btns clearfix">
+  <a ng-hide="noPrevious()" ng-click="selectPage(page - 1, $event)" href class="btn btn-previous-question" pull-left>{{::getText('previous')}}</a>
+  <a ng-hide="noNext()" ng-click="selectPage(page + 1, $event)" href class="btn btn-next-question pull-right">{{::getText('next')}}</a>
+
+  <!-- @see https://www.pivotaltracker.com/story/show/114066447 -->
+  <!--a ng-show="noNext()" class="btn btn-next-question pull-right" ui-sref="group_finder.join.contact">Contact Crossroads</a-->
+</p>

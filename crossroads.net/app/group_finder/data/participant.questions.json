@@ -1,12 +1,29 @@
 {
   "questions": [
     {
+      "key": "setup1",
+      "header": "Let's find the right group for you.",
+      "description": "We’ll ask you five questions that will help us connect you with people who are in a similar spot. (We’ll try to keep the Steelers and Bengals fans separate.)",
+      "next": "Got it."
+    },
+    {
+      "key": "setup2",
+      "header": "How does this work?",
+      "description": "When you’re finished answering the next five questions, we’ll show you several groups that show similar goals, interests or wants. It’s going to be great. Let’s do this!",
+      "next": "Ready. Set. Go"
+    },
+    {
       "key": "prior_participation",
-      "header": "Have you journeyed with us before?",
+      "header": "Have you done a journey with us before?",
+      "description": "If this is your first journey, it’s OK to be a little nervous. If it’s your second or third time, you might consider hosting a group (we believe in you).",
       "model": "member",
       "input_type": "radio",
-      "answers": ["No. And I'm Nervous", "Nope. First Time and I am so excited!", "Once before", "Yes, multiple times"],
-      "required": false
+      "answers": [
+        "No. And I’m nervous.",
+        "Nope. First time and I'm pumped!",
+        "Once before.",
+        "Yes. So many journeys."
+      ]
     },
     {
       "key": "affinity",
@@ -14,57 +31,83 @@
       "description": "Pick the one that most represents how you feel.",
       "model": "member",
       "input_type": "radio",
-      "answers": ["Not really sure. You said I should join a group, so here I am!", "I want to grow spiritually", "I'm looking for someone I can learn from", "I want to make some new friends"],
-      "required": false
+      "answers": [
+        "Not really sure. You said I should join a group, so here I am!",
+        "I want to make some friends.",
+        "I want to grow spiritually.",
+        "I’m looking for someone I can learn from."
+      ]
     },
     {
       "key": "gender",
-      "header": "Are you a man or a woman?",
+      "header": "What's your gender?",
+      "description": "Because it’s important for helping you find the right group.",
       "input_type": "radio",
       "model": "member",
-      "answers": ["I'm a grown Man", "I'm a Woman (roar)"],
-      "required": false
+      "answers": [
+        "I'm a grown Man",
+        "I'm a Woman (roar)"
+      ]
     },
     {
       "key": "relationship_status",
-      "header": "Are you hitched?",
+      "header": "What’s your relationship status?",
+      "description": "This helps us make sure to save room for your spouse or connect you with couples groups.",
       "model": "member",
       "input_type": "radio",
-      "answers": ["Nope", "Yes but we are going throught the journey seperately", "Yes and I inted to journey with my spouse"],
-      "required": false
+      "answers": [
+        "I’m not married.",
+        "I’m married, but we’re going through the journey separately.",
+        "I’m married and I want to be in the same group with my spouse."
+      ]
     },
     {
-      "body": "<h3>Next we're gonna ask some meeting time questions</h3><p>Keep in mind, BRAVE groups meet once a week for 5 weeks, starting the week of April 3rd and ending the week of May 1st. Most groups take less than 90 minutes from start to finish.</p>",
-      "next": "Let's get started!"
+      "key": "nextsteps1",
+      "header": "Great! Now we’ll ask you some questions about when you’d like to meet.",
+      "description": "Remember, BRAVE groups meet once a week for five weeks (starting the week of April 3 and ending the week of May 1). Groups usually take less than 90 minutes from start to finish."
     },
     {
       "key": "date_time_week",
-      "header": "When are you free to meet during the week (Mon-Fri)?",
+      "header": "Great! Are you free to meet during the week (Mon-Fri)?",
       "description": "The more options you check, the better we can find the right group for you.",
       "model": "member",
       "input_type": "checkbox",
-      "answers": ["Early mornings (before 9am)", "Mornings (between 9am and noon)", "Afternoons (between noon and 5pm)", "Evenings after work (between 5pm and 8pm)", "Late evenings (after 8pm)"],
-      "required": false
+      "answers": [
+        "Early mornings (before 9am)",
+        "Mornings (between 9am and noon)",
+        "Afternoons (between noon and 5pm)",
+        "Evenings after work (between 5pm and 8pm)",
+        "Late evenings (after 8pm)",
+        "I can't meet on weekdays"
+      ]
     },
     {
       "key": "date_time_weekend",
-      "header": "Great! What about SATURDAYS and SUNDAYS?",
-      "description": "Could you make any of these times work?",
+      "header": "Sweet! Are you free on SATURDAYS and SUNDAYS?",
+      "description": "The more options you check, the better we can find the right group for you.",
       "model": "member",
       "input_type": "checkbox",
-      "answers": ["Early mornings (before 9am)", "Mornings (between 9am and noon)", "Afternoons (between noon and 5pm)", "Evenings after work (between 5pm and 8pm)", "Late evenings (after 8pm)"],
-      "required": false
+      "answers": [
+        "Early mornings (before 9am)",
+        "Mornings (between 9am and noon)",
+        "Afternoons (between noon and 5pm)",
+        "Evenings after work (between 5pm and 8pm)",
+        "Late evenings (after 8pm)",
+        "I can't meet on weekends"
+      ]
     },
     {
       "key": "location",
-      "header": "Last one! Please add your address so we can show the distance between you and your potential groups. ",
+      "header": "Last one!",
+      "description": "Please add your address so we can show the distance between you and your potential groups. A home address may have auto-filled below if you logged in to your Crossroads account. Please update it if we got it wrong.",
       "model": "member",
-      "input_type": "address",
-      "required": false
+      "input_type": "address"
     },
     {
-      "body": "<h3>You did it. And now the science is happenning. </h3><p>The data you entered will be crunched, blended and matched. Creating an output of groups that will fit you perfectly. Stand by.</p>",
-      "next": "Let's get started!"
+      "key": "success",
+      "header": "Way to go! We’re matching you to groups.",
+      "description": "You’ll be matched to several groups who fit your goals, interests and who live closest to you. Scroll through the group profiles, read their description and join the group that’s best for you.",
+      "next": "See Your Results"
     }
   ]
 }

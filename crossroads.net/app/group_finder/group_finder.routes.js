@@ -14,8 +14,9 @@
         controller: 'GroupFinderCtrl as base',
         templateUrl: 'common/layout.html',
         resolve: {
-          Profile: 'Profile',
-          Person: 'Person'
+          StartProfileLoad: ['Person', function(Person) {
+            Person.loadProfile();
+          }]
         },
         data: {
           meta: {
@@ -29,7 +30,10 @@
         controller: 'SummaryCtrl as summary',
         url: '/summary',
         templateUrl: 'summary/summary.html',
-        resolve: {},
+        resolve: {
+          Profile: 'Profile',
+          Person: 'Person'
+        },
         data: {
           isProtected: true,
           meta: {

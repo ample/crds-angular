@@ -3,9 +3,9 @@
 
   module.exports = SummaryCtrl;
 
-  SummaryCtrl.$inject = ['$scope', '$log', '$state', 'GroupInfo'];
+  SummaryCtrl.$inject = ['$state', 'GroupInfo'];
 
-  function SummaryCtrl ($scope, $log, $state, GroupInfo) {
+  function SummaryCtrl($state, GroupInfo) {
 
     var vm = this;
 
