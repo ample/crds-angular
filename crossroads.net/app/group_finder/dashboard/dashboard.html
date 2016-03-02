@@ -26,6 +26,12 @@
         <!-- TODO This text needs to be pulled out of CMS -->
         <p class="help text-center">You haven't joined any groups yet.</p>
       </div>
+      <p>
+        <a class="btn btn-standard-dark btn-block" ui-sref="group_finder.join">
+          <span ng-if="dashboard.groups.participating.length > 0">Join Another Group</span>
+          <span ng-if="dashboard.groups.participating.length == 0">Join a Group</span>
+        </a>
+      </p>
     </div>
 
   </div>
