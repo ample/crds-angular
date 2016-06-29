@@ -1,3 +1,4 @@
+import {UpgradeAdapter} from '@angular/upgrade';
 //require('./group_finder');
 
 require('./childcare');
@@ -9,6 +10,7 @@ require('ui-select/dist/select.css');
 
   var MODULE = 'crossroads';
   var constants = require('./constants');
+  var adapter = new UpgradeAdapter();
 
   angular.module(constants.MODULES.CROSSROADS, [
       constants.MODULES.CHILDCARE,
@@ -42,5 +44,7 @@ require('ui-select/dist/select.css');
   require('./volunteer_signup');
   require('./volunteer_application');
   require('./giving_history');
+
+  adapter.bootstrap(document.body, [constants.MODULES.CROSSROADS]);
 
 })();
