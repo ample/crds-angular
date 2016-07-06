@@ -2,6 +2,7 @@ var del = require('del');
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var gutil = require('gulp-util');
+var typescript = require('gulp-typescript');
 var webpack = require('webpack');
 var gulpWebpack = require('gulp-webpack');
 var WebpackDevServer = require('webpack-dev-server');
@@ -81,7 +82,15 @@ var webPackConfigs = [Object.create(webpackConfig)];
 var webPackDevConfigs = [Object.create(webPackDevConfig)];
 
 // Start the development server
-gulp.task('default', ['webpack-dev-server']);
+gulp.task('default', ['tsc','webpack-dev-server']);
+
+// Compile any typescript files
+var tsProject = typescript.createProject("tsconfig.json");
+gulp.task("tsc", function () {
+    return tsProject.src()
+        .pipe(typescript(tsProject))
+        .js.pipe(gulp.dest("app"));
+});
 
 // Build and watch cycle (another option for development)
 // Advantage: No server required, can run app from filesystem

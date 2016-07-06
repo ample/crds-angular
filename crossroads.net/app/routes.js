@@ -363,6 +363,28 @@
             }
           }
         })
+        .state('ng2test', {
+          parent: 'noHeaderOrFooter',
+          url: '/ng2test',
+          template: '<ng2-test></ng2-test>',
+          data: {
+            meta: {
+              title: 'Ng2Test',
+              description: ''
+            }
+          }
+        })
+        .state('live', {
+          parent: 'screenWidth',
+          url: '/live',
+          template: '<streaming></streaming>',
+          data: {
+            meta: {
+              title: 'Live',
+              description: ''
+            }
+          }
+        })
         .state('superbowl', {
           parent: 'screenWidth',
           url: '/superbowl',
