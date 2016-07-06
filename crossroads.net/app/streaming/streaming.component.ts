@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 import { Event } from './event';
 import { StreamspotService } from './streamspot.service';
@@ -11,7 +12,7 @@ import { StreamspotService } from './streamspot.service';
       <span>{{event.title}} @ {{event.start}}</span>
     </div>
   `,
-  providers: [StreamspotService]
+  providers: [StreamspotService, HTTP_PROVIDERS]
 })
 
 export class StreamingComponent implements OnInit {
@@ -21,6 +22,9 @@ export class StreamingComponent implements OnInit {
 
   ngOnInit() {
     this.streamspotService.get()
-      .then(events => this.events = events)
+      .then(events => {
+        console.log(events);
+        this.events = events
+      })
   }
 }
