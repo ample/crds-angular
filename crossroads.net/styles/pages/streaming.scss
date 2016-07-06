@@ -1,0 +1,371 @@
+$live-imgix-domain: '//ample.imgix.net';
+$live-font-semi_cond: "acumin-pro-semi-condensed", sans-serif;
+$live-font-extra_cond: "acumin-pro-extra-condensed", sans-serif;
+$live-font-sans: "acumin-pro", sans-serif;
+$live-font-serif: "lexia", serif;
+$live-blue: #0795E3;
+
+@mixin crds-jumbotron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h1, h2 {
+    margin-bottom: 1em;
+  }
+  > div {
+    padding: 1em;
+    margin: 0 auto;
+    @media (min-width: $screen-md-min) {
+      width: 50%;
+    }
+  }
+  .btn {
+    margin-top: 1em;
+  }
+}
+
+@mixin crds-card {
+  section, figcaption {
+    position: relative;
+    top: -1.25em;
+  }
+  section {
+    margin-top: -0.5em;
+    padding: 0 1.7em;
+    &:before {
+      content: "\2014";
+      color: lighten($gray, 20%);
+    }
+  }
+  figcaption {
+    font-family: $live-font-extra_cond;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 1em 0 0.5em;
+    padding: 0.15em 0.45em;
+    max-width: 80%;
+    font-weight: 600;
+    font-size: 210%;
+    line-height: 100%;
+    letter-spacing: -0.032em;
+    background: #FFF;
+  }
+  a {
+    color: $gray;
+  }
+  h3 {
+    font-size: 110%;
+    margin: 0.3em 0 0.3em;
+  }
+  p {
+    font-size: 90%;
+  }
+}
+
+// ----------------------------------------- ###
+
+streaming {
+  font-family: $live-font-sans;
+
+  h1, h2 {
+    font-family: $live-font-sans;
+    font-weight: 100;
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+
+  > section {
+    @include make-row();
+    @include clearfix();
+  }
+
+  .navbar-section {
+    background: $live-blue;
+    color: #FFF;
+    text-align: center;
+    padding: 0.75em 0 0.65em;
+    font-size: 90%;
+
+    .btn {
+      margin-top: 0.25em;
+      text-transform: uppercase;
+      font-size: 90%;
+      font-family: $live-font-semi_cond;
+      color: #FFF;
+    }
+
+    .upcoming {
+      display: table;
+      text-align: center;
+
+      i, ul {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      i {
+        font-family: $live-font-serif;
+
+        font-style: italic;
+        font-size: 123%;
+        letter-spacing: -0.015em;
+        padding-right: 1em;
+      }
+
+      li {
+        line-height: 140%;
+        padding: 0;
+
+        &.vr:before {
+          @include rotate(-90deg);
+          display: inline-block;
+          content: '\2014';
+          font-size: 190%;
+          font-weight: 100;
+          position: relative;
+          top: -0.25em;
+        }
+      }
+
+      i, li.vr:before {
+        color: lighten($live-blue, 25%);
+      }
+
+      strong {
+        display: block;
+        font-size: 160%;
+        font-weight: 400;
+      }
+
+      small {
+        font-family: $live-font-semi_cond;
+        text-transform: uppercase;
+        font-size: 63%;
+        font-weight: 200;
+
+      }
+
+      @media (min-width: $screen-sm-min) {
+        i {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .intro {
+    @include crds-jumbotron();
+    background: #2E2E30 url("#{$live-imgix-domain}/anywhere-hero.jpg?w=1&crop=faces&dpr=2&fit=crop");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 2em 0;
+
+    &, h1 {
+      color: #FFF;
+    }
+
+    & {
+      font-size: 125%;
+    }
+
+    h1 {
+      font-size: 338%;
+      margin-bottom: 0.5em;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 792px;
+    }
+  }
+
+  .current-series {
+    figure {
+      margin-top: 1em;
+      margin-bottom: 1.75em;
+      text-align: center;
+      position: relative;
+
+      figcaption {
+        font-family: $live-font-serif;
+        font-style: italic;
+        font-size: 85%;
+        position: absolute;
+        bottom: -0.5em;
+        margin-left: 1em;
+        padding: 0.4em 1em;
+        background: #D3DFE6;
+        color: $gray;
+
+        @media (min-width: $screen-sm-min) {
+          margin-left: 8em;
+        }
+      }
+      .img-responsive {
+        margin: 0 auto;
+      }
+    }
+    article {
+      @include make-md-column(5);
+      @include make-md-column-offset(1);
+
+      h2 {
+        font-size: 270%;
+        margin-bottom: 0.75em;
+
+        small {
+          font-family: $live-font-sans;
+          font-weight: 600;
+          font-size: 32%;
+          text-transform: uppercase;
+          display: block;
+          margin-top: 0.35em;
+        }
+      }
+
+      p {
+        margin: 0 0 1.5em;
+      }
+
+      .lead {
+        font-size: 120%;
+      }
+    }
+    aside {
+      @include make-md-column(4);
+      @include make-md-column-offset(1);
+      margin-top: 2em;
+
+      h3 {
+        font-family: $live-font-extra_cond;
+        font-size: 170%;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+        margin: 0 0 0.45em;
+      }
+
+      hr {
+        border-color: darken($gray-lighter, 10%);
+        width: 100%;
+        margin: 0;
+      }
+
+      .well {
+        border: none;
+        border-radius: none;
+        box-shadow: none;
+        background: lighten($gray-lighter, 3%);
+      }
+
+      .row {
+        @include make-row();
+        font-size: 90%;
+        padding-top: 1em;
+        &, li {
+          font-family: $live-font-sans;
+        }
+        a {
+          font-weight: 600;
+        }
+        strong {
+          display: block;
+        }
+        .date, .time, .cta {
+          @include make-xs-column(4);
+        }
+      }
+    }
+  }
+
+  .past-weekends {
+    margin: 2em 0;
+
+    &, h3 {
+      color: $gray;
+    }
+    article {
+      @include crds-card();
+      @media only screen and (max-width:  $screen-md-min - 1){
+        @include make-sm-column(6);
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+      }
+      @media only screen and (min-width:  $screen-md-min){
+        @include make-md-column(3);
+      }
+    }
+
+    header {
+      border-top: 1px solid lighten($gray, 50%);
+      h2 {
+        color: lighten($gray, 50%);
+        margin: 0;
+        font-size: 200%;
+        margin: 0.75em 0;
+      }
+      .view-all {
+        font-size: 80%;
+        display: block;
+        margin-top: 3em;
+      }
+    }
+  }
+
+  .ways-to-watch {
+    background: #F6F6F6;
+    padding: 2em 0;
+    text-align: center;
+
+    h2 {
+      font-size: 200%;
+      color: lighten($gray, 25%);
+      margin-bottom: 1em;
+    }
+
+    figure {
+      @include make-md-column(2);
+      &:first-child {
+          @include make-md-column-offset(1);
+      }
+      display: table-cell;
+      vertical-align: bottom;
+
+      figcaption {
+        font-size: 70%;
+        font-weight: 600;
+        margin-top: 0.3em;
+
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .community {
+    @include crds-jumbotron();
+    background: #1D3C50 url("#{$live-imgix-domain}/anywhere-map.jpg?w=1&dpr=2&fit=crop");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 622px;
+    &, h2 {
+      color: #FFF;
+    }
+  }
+
+  .group-host {
+    @include crds-jumbotron();
+    min-height: 500px;
+    .btns > a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+} // streaming
