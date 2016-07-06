@@ -6,7 +6,8 @@
         "preserveConstEnums": true,
         //"outFile": "assets/tsc.js",
         "sourceMap": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "exclude": [
         "node_modules",
