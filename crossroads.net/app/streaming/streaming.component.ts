@@ -1,11 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Event } from './event';
+import { StreamspotService } from './streamspot.service';
 
 @Component({
   selector: 'streaming',
-  template: require('./streaming.component.html')
+  template: `
+    <h1>Upcoming Events</h1>
+    <div *ngFor="let event of events">
+      <span>{{event.title}} @ {{event.start}}</span>
+    </div>
+  `,
+  providers: [StreamspotService]
 })
 
-export class StreamingComponent {
-  constructor() {
+export class StreamingComponent implements OnInit {
+  events: Event[] = [];
+
+  constructor(private streamspotService: StreamspotService) { }
+
+  ngOnInit() {
+    this.streamspotService.get()
+      .then(events => this.events = events)
   }
 }
