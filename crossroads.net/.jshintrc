@@ -29,7 +29,6 @@
     "boss": false,
     "debug": false,
     "eqnull": true,
-    "esnext": true,
     "evil": false,
     "expr": false,
     "funcscope": false,
